@@ -1,0 +1,20 @@
+<launch>
+    <arg name="position_tolerance" default="15.0" />
+    <arg name="orientation_tolerance" default="3.14" />
+    <arg name="retry_attempts" default="3" />
+    <arg name="loop_waypoints" default="false" />
+    <arg name="nav_timeout" default="60.0" />
+    <arg name="update_rate" default="10.0" />
+    <arg name="initial_move_distance" default="0.1" />
+
+    <node name="waypoint_navigator" pkg="waypoint_navigator" type="waypoint_navigator_node" output="screen">
+        <rosparam command="load" file="$(find waypoint_navigator)/config/waypoints.yaml" />
+        <param name="position_tolerance" value="$(arg position_tolerance)" />
+        <param name="orientation_tolerance" value="$(arg orientation_tolerance)" />
+        <param name="retry_attempts" value="$(arg retry_attempts)" />
+        <param name="loop_waypoints" value="$(arg loop_waypoints)" />
+        <param name="nav_timeout" value="$(arg nav_timeout)" />
+        <param name="update_rate" value="$(arg update_rate)" />
+        <param name="initial_move_distance" value="$(arg initial_move_distance)" />
+    </node>
+</launch>

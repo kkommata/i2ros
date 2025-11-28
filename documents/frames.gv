@@ -1,0 +1,15 @@
+digraph G {
+"OurCar/INS" -> "OurCar/Center"[label="Broadcaster: /tf_nominal_center\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1754079347.911 sec old)\nBuffer length: 0.000 sec\n"];
+"world" -> "OurCar/INS"[label="Broadcaster: /Unity_ROS_message_Rx\nAverage rate: 18.820 Hz\nMost recent transform: 1754079347.783 ( 0.129 sec old)\nBuffer length: 4.889 sec\n"];
+"OurCar/Sensors/SensorBase" -> "OurCar/Sensors/DepthCamera"[label="Broadcaster: /tf_depth_camera\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1754079347.911 sec old)\nBuffer length: 0.000 sec\n"];
+"OurCar/Center" -> "OurCar/Sensors/SensorBase"[label="Broadcaster: /tf_sensors\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1754079347.911 sec old)\nBuffer length: 0.000 sec\n"];
+"OurCar/Sensors/SensorBase" -> "OurCar/Sensors/SegCamera"[label="Broadcaster: /tf_segmentation_camera\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1754079347.911 sec old)\nBuffer length: 0.000 sec\n"];
+"OurCar/Sensors/SensorBase" -> "OurCar/Sensors/RGBCameraLeft"[label="Broadcaster: /tf_RGB_camera_left\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1754079347.911 sec old)\nBuffer length: 0.000 sec\n"];
+"OurCar/Sensors/SensorBase" -> "OurCar/Sensors/RGBCameraRight"[label="Broadcaster: /tf_RGB_camera_right\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1754079347.911 sec old)\nBuffer length: 0.000 sec\n"];
+"world" -> "odom"[label="Broadcaster: /tf_node\nAverage rate: 18.820 Hz\nMost recent transform: 1754079347.783 ( 0.129 sec old)\nBuffer length: 4.889 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /tf_node\nAverage rate: 18.820 Hz\nMost recent transform: 1754079347.783 ( 0.129 sec old)\nBuffer length: 4.889 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1754079347.911"[ shape=plaintext ] ;
+ }->"world";
+}

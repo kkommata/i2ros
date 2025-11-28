@@ -1,0 +1,17 @@
+<launch>
+  <!-- 红绿灯检测 -->
+  <node name="yolo_detector" pkg="perception_yolo" type="yolo_detector.py" output="screen">
+    <param name="image_topic" value="/Unity_ROS_message_Rx/OurCar/Sensors/RGBCameraLeft/image_raw"/>
+    <rosparam file="$(find perception_yolo)/config/traffic_light.yaml" command="load"/>
+  </node>
+  <!-- TF 广播 -->
+    <node pkg="perception_yolo" type="static_tf_publisher.py" name="static_tf_broadcaster" output="screen"/>
+  <!-- Occupancy Map 构建 -->
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" output="screen">
+    <remap from="/cloud_in" to="/Unity_ROS_message_Rx/OurCar/Sensors/DepthCamera/points"/>
+    <param name="project_2d_map" value="true" />
+    <param name="map_publish_frequency" value="1.0" />
+    <param name="frame_id" value="OurCar/DepthCamera"/>
+    <param name="resolution" value="0.1"/>
+  </node>
+</launch>

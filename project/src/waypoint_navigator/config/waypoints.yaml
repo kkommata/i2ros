@@ -1,0 +1,599 @@
+waypoints:
+  - name: "waypoint_0"
+    position:
+      x: -62.80
+      y: -9.00
+      z: 0.8
+
+  - name: "waypoint_1"
+    position:
+      x: -63.13
+      y: 8.15
+      z: 0.8
+
+  - name: "waypoint_2"
+    position:
+      x: -63.00
+      y: 25.30
+      z: 0.8
+
+  - name: "waypoint_3"
+    position:
+      x: -59.87
+      y: 35.86
+      z: 0.8
+
+  - name: "waypoint_4"
+    position:
+      x: -53.07
+      y: 45.65
+      z: 0.8
+
+  - name: "waypoint_5"
+    position:
+      x: -47.30
+      y: 49.83
+      z: 0.8
+
+  - name: "waypoint_6"
+    position:
+      x: -40.07
+      y: 52.3
+      z: 0.8
+
+  - name: "waypoint_7"
+    position:
+      x: -19.01
+      y: 53.0
+      z: 0.8
+
+  - name: "waypoint_8"
+    position:
+      x: 0.24
+      y: 53.0
+      z: 0.8
+
+  - name: "waypoint_9"
+    position:
+      x: 19.50
+      y: 53.0
+      z: 0.8
+
+  - name: "waypoint_10"
+    position:
+      x: 38.76
+      y: 53.0
+      z: 0.8
+
+  - name: "waypoint_11"
+    position:
+      x: 58.02
+      y: 53.0
+      z: 0.8
+
+  - name: "waypoint_12"
+    position:
+      x: 77.28
+      y: 53.0
+      z: 0.8
+
+  - name: "waypoint_13"
+    position:
+      x: 87.69
+      y: 53.0
+      z: 0.8
+
+  - name: "waypoint_14"
+    position:
+      x: 108.00
+      y: 53.2
+      z: 0.8
+
+  - name: "waypoint_15"
+    position:
+      x: 114.00
+      y: 53.2
+      z: 0.8
+
+  - name: "waypoint_16"
+    position:
+      x: 118.00
+      y: 51.5
+      z: 0.8
+
+  - name: "waypoint_17"
+    position:
+      x: 120.50
+      y: 49.5
+      z: 0.8
+
+  - name: "waypoint_18"
+    position:
+      x: 123.0
+      y: 44.0
+      z: 0.8
+
+  - name: "waypoint_19"
+    position:
+      x: 123.0
+      y: 24.73
+      z: 0.8
+
+  - name: "waypoint_19"
+    position:
+      x: 122.0
+      y: 13.0
+      z: 0.8
+
+  - name: "waypoint_20"
+    position:
+      x: 123.0
+      y: 7.0
+      z: 0.8
+
+  - name: "waypoint_21"
+    position:
+      x: 126.0
+      y: 4.0
+      z: 0.8
+
+  - name: "waypoint_22"
+    position:
+      x: 130.5
+      y: 2.8
+      z: 0.8
+  - name: "waypoint_23"
+    position:
+      x: 135.0
+      y: 3.2
+      z: 0.8
+
+  - name: "waypoint_24"
+    position:
+      x: 140.55
+      y: 4.8
+      z: 0.8
+
+  - name: "waypoint_25"
+    position:
+      x: 159.91
+      y: 4.8
+      z: 0.8
+
+  - name: "waypoint_26"
+    position:
+      x: 179.28
+      y: 4.8
+      z: 0.8
+
+  - name: "waypoint_27"
+    position:
+      x: 210.0
+      y: 3.8
+      z: 0.8
+
+  - name: "waypoint_28"
+    position:
+      x: 218.0
+      y: 3.8
+      z: 0.8
+
+  - name: "waypoint_29"
+    position:
+      x: 223.8
+      y: 4.2
+      z: 0.8
+
+  - name: "waypoint_30"
+    position:
+      x: 228.0
+      y: 6.2
+      z: 0.8
+
+  # - name: "waypoint_31"
+  #   position:
+  #     x: 233.00
+  #     y: 12.65
+  #     z: 0.8
+
+  - name: "waypoint_32"
+    position:
+      x: 232.0
+      y: 23.7
+      z: 0.8
+
+  - name: "waypoint_33"
+    position:
+      x: 228.0
+      y: 32.7
+      z: 0.8
+
+  - name: "waypoint_34"
+    position:
+      x: 225.87
+      y: 39.26
+      z: 0.8
+
+  - name: "waypoint_35"
+    position:
+      x: 221.00
+      y: 45.1
+      z: 0.8
+
+  - name: "waypoint_36"
+    position:
+      x: 213.78
+      y: 48.98
+      z: 0.8
+
+  - name: "waypoint_37"
+    position:
+      x: 207.0
+      y: 50.2
+      z: 0.8
+
+  - name: "waypoint_38"
+    position:
+      x: 174.28
+      y: 53.56
+      z: 0.8
+
+  # - name: "waypoint_40"
+  #   position:
+  #     x: 153.74
+  #     y: 52.07
+  #     z: 0.8
+
+  # - name: "waypoint_41"
+  #   position:
+  #     x: 138.47
+  #     y: 52.5
+  #     z: 0.8
+
+  # - name: "waypoint_42"
+  #   position:
+  #     x: 125.71
+  #     y: 52.58
+  #     z: 0.8
+
+  - name: "waypoint_43"
+    position:
+      x: 109.95
+      y: 52.27
+      z: 0.8
+
+  - name: "waypoint_44"
+    position:
+      x: 100.18
+      y: 52.75
+      z: 0.8
+
+  # - name: "waypoint_45"
+  #   position:
+  #     x: 87.42
+  #     y: 52.83
+  #     z: 0.8
+
+  # - name: "waypoint_46"
+  #   position:
+  #     x: 74.66
+  #     y: 52.92
+  #     z: 0.8
+
+  # - name: "waypoint_47"
+  #   position:
+  #     x: 61.90
+  #     y: 53
+  #     z: 0.8
+
+  - name: "waypoint_48"
+    position:
+      x: 54.2
+      y: 52.5
+      z: 0.8
+
+  - name: "waypoint_49"
+    position:
+      x: 45.86
+      y: 48.66
+      z: 0.8
+
+  # - name: "waypoint_50"
+  #   position:
+  #     x: 52.75
+  #     y: 51.96
+  #     z: 0.8
+
+  # - name: "waypoint_51"
+  #   position:
+  #     x: 51.31
+  #     y: 51.21
+  #     z: 0.8
+
+  # - name: "waypoint_52"
+  #   position:
+  #     x: 50.61
+  #     y: 50.77
+  #     z: 0.8
+
+  # - name: "waypoint_53"
+  #   position:
+  #     x: 49.94
+  #     y: 50.29
+  #     z: 0.8
+
+  # - name: "waypoint_54"
+  #   position:
+  #     x: 49.28
+  #     y: 49.77
+  #     z: 0.8
+
+  # - name: "waypoint_55"
+  #   position:
+  #     x: 48.09
+  #     y: 48.62
+  #     z: 0.8
+
+  # - name: "waypoint_56"
+  #   position:
+  #     x: 47.55
+  #     y: 48.0
+  #     z: 0.8
+
+  # - name: "waypoint_57"
+  #   position:
+  #     x: 47.07
+  #     y: 47.35
+  #     z: 0.8
+
+  # - name: "waypoint_58"
+  #   position:
+  #     x: 46.65
+  #     y: 46.68
+  #     z: 0.8
+
+  # - name: "waypoint_59"
+  #   position:
+  #     x: 46.0
+  #     y: 45.28
+  #     z: 0.8
+
+  # - name: "waypoint_60"
+  #   position:
+  #     x: 45.65
+  #     y: 43.81
+  #     z: 0.8
+
+  - name: "waypoint_61"
+    position:
+      x: 46.22
+      y: 12.5
+      z: 0.8
+
+  # - name: "waypoint_62"
+  #   position:
+  #     x: 44.8
+  #     y: 9.19
+  #     z: 0.8
+
+  # - name: "waypoint_63"
+  #   position:
+  #     x: 44.5
+  #     y: 8.46
+  #     z: 0.8
+
+  # - name: "waypoint_64"
+  #   position:
+  #     x: 43.92
+  #     y: 7.8
+  #     z: 0.8
+
+  # - name: "waypoint_65"
+  #   position:
+  #     x: 43.12
+  #     y: 7.21
+  #     z: 0.8
+
+  # - name: "waypoint_66"
+  #   position:
+  #     x: 42.14
+  #     y: 6.68
+  #     z: 0.8
+
+  # - name: "waypoint_67"
+  #   position:
+  #     x: 41.01
+  #     y: 6.22
+  #     z: 0.8
+
+  # - name: "waypoint_68"
+  #   position:
+  #     x: 39.79
+  #     y: 5.82
+  #     z: 0.8
+
+  # - name: "waypoint_69"
+  #   position:
+  #     x: 38.52
+  #     y: 5.47
+  #     z: 0.8
+
+  # - name: "waypoint_70"
+  #   position:
+  #     x: 37.23
+  #     y: 5.17
+  #     z: 0.8
+
+  # - name: "waypoint_71"
+  #   position:
+  #     x: 35.98
+  #     y: 4.92
+  #     z: 0.8
+
+  # - name: "waypoint_72"
+  #   position:
+  #     x: 34.81
+  #     y: 4.71
+  #     z: 0.8
+
+  # - name: "waypoint_73"
+  #   position:
+  #     x: 33.76
+  #     y: 4.55
+  #     z: 0.8
+
+  # - name: "waypoint_74"
+  #   position:
+  #     x: 32.87
+  #     y: 4.42
+  #     z: 0.8
+
+  # - name: "waypoint_75"
+  #   position:
+  #     x: 32.19
+  #     y: 4.32
+  #     z: 0.8
+
+  - name: "waypoint_76"
+    position:
+      x: 36.75
+      y: 3.45
+      z: 0.8
+
+  - name: "waypoint_77"
+    position:
+      x: 6.35
+      y: 1.83
+      z: 0.8
+
+  # - name: "waypoint_78"
+  #   position:
+  #     x: -0.15
+  #     y: 4.25
+  #     z: 0.8
+
+  # - name: "waypoint_79"
+  #   position:
+  #     x: -16.09
+  #     y: 4.25
+  #     z: 0.8
+
+  - name: "waypoint_80"
+    position:
+      x: -32.04
+      y: 3.12
+      z: 0.8
+
+  - name: "waypoint_81"
+    position:
+      x: -57.13
+      y: 3.12
+      z: 0.8
+
+  # - name: "waypoint_82"
+  #   position:
+  #     x: -46.84
+  #     y: 4.2
+  #     z: 0.8
+
+  # - name: "waypoint_83"
+  #   position:
+  #     x: -47.69
+  #     y: 4.06
+  #     z: 0.8
+
+  # - name: "waypoint_84"
+  #   position:
+  #     x: -48.56
+  #     y: 3.84
+  #     z: 0.8
+
+  # - name: "waypoint_85"
+  #   position:
+  #     x: -49.42
+  #     y: 3.54
+  #     z: 0.8
+
+  # - name: "waypoint_86"
+  #   position:
+  #     x: -50.27
+  #     y: 3.16
+  #     z: 0.8
+
+  # - name: "waypoint_87"
+  #   position:
+  #     x: -51.1
+  #     y: 2.72
+  #     z: 0.8
+
+  # - name: "waypoint_88"
+  #   position:
+  #     x: -51.9
+  #     y: 2.21
+  #     z: 0.8
+
+  # - name: "waypoint_89"
+  #   position:
+  #     x: -52.67
+  #     y: 1.64
+  #     z: 0.8
+
+  # - name: "waypoint_90"
+  #   position:
+  #     x: -53.39
+  #     y: 1.03
+  #     z: 0.8
+
+  # - name: "waypoint_91"
+  #   position:
+  #     x: -54.06
+  #     y: 0.36
+  #     z: 0.8
+
+  # - name: "waypoint_92"
+  #   position:
+  #     x: -54.67
+  #     y: -0.34
+  #     z: 0.8
+
+  # - name: "waypoint_93"
+  #   position:
+  #     x: -55.21
+  #     y: -1.08
+  #     z: 0.8
+
+  # - name: "waypoint_94"
+  #   position:
+  #     x: -55.67
+  #     y: -1.84
+  #     z: 0.8
+
+  # - name: "waypoint_95"
+  #   position:
+  #     x: -56.04
+  #     y: -2.64
+  #     z: 0.8
+
+  # - name: "waypoint_96"
+  #   position:
+  #     x: -56.32
+  #     y: -3.44
+  #     z: 0.8
+
+  # - name: "waypoint_97"
+  #   position:
+  #     x: -56.49
+  #     y: -4.26
+  #     z: 0.8
+
+  # - name: "waypoint_98"
+  #   position:
+  #     x: -56.55
+  #     y: -5.09
+  #     z: 0.8
+
+  - name: "End Point"
+    position:
+      x: -61.00
+      y: -9.00
+      z: 0.8

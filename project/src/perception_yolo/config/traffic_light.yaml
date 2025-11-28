@@ -1,0 +1,6 @@
+hsv_red_min: [0, 100, 100]
+hsv_red_max: [10, 255, 255]
+hsv_green_min: [40, 50, 50]
+hsv_green_max: [90, 255, 255]
+hsv_yellow_min: [15, 100, 100]
+hsv_yellow_max: [35, 255, 255]

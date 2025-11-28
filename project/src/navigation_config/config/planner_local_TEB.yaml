@@ -1,0 +1,85 @@
+base_local_planner: "teb_local_planner/TebLocalPlannerROS"
+planner_frequency: 5
+planner_patience: 2.0
+
+TebLocalPlannerROS:
+  odom_topic: /forward_state
+  map_frame: world
+  # robot_base_frame: rear_axle_link
+  robot_base_frame: OurCar/Center
+
+  # Trajectory
+  teb_autosize: True
+  dt_ref: 0.35
+  dt_hysteresis: 0.1
+  global_plan_overwrite_orientation: True
+  max_global_plan_lookahead_dist: 10.0
+  feasibility_check_no_poses: 20
+  meter_scoring: True
+
+  # Robot
+  max_vel_x: 3.5
+  max_vel_x_backwards: 2.0
+  max_vel_theta: 1.0
+  acc_lim_x: 2.0
+  acc_lim_theta: 5.0
+
+  min_turning_radius: 4.5
+  wheelbase: 2.63
+  cmd_angle_instead_rotvel: False
+  max_samples: 500
+
+  footprint_model:
+    type: "polygon"
+    # vertices: [[3.55, -1.0], [-0.85, -1.0], [-0.85, 1.0], [3.55, 1.0]]
+    vertices: [[2.2, -1], [-2.2, -1], [-2.2, 1], [2.2, 1]]
+
+  # GoalTolerance
+  xy_goal_tolerance: 3.5
+  yaw_goal_tolerance: 0.5
+  free_goal_vel: False # allow max speed
+
+  # Obstacles
+  min_obstacle_dist: 1.0
+  include_costmap_obstacles: True
+  costmap_obstacles_behind_robot_dist: 5.0
+  obstacle_poses_affected: 10
+  costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
+  costmap_converter_spin_thread: True
+  costmap_converter_rate: 5
+
+  # Optimization
+  no_inner_iterations: 5
+  no_outer_iterations: 4
+  optimization_activate: True
+  optimization_verbose: False
+  penalty_epsilon: 0.1 # 达到最大速度时提前减速，起到缓冲作用
+
+  # ------- 优化权重调整 ---------
+  weight_max_vel_x: 2 # 最大x速度权重0～2
+  weight_max_vel_theta: 1 # 0～1
+  weight_acc_lim_x: 0.5 # 0～1
+  weight_acc_lim_theta: 1 # 0～1
+  weight_kinematics_nh: 20
+  weight_kinematics_forward_drive: 10 # 迫使机器人前进，禁止倒车 0～1000
+  weight_kinematics_turning_radius: 600 # 车型机器人最小转弯半径 0～1000, 越大越容易达到最小转弯半径
+  weight_optimaltime: 300 # 优化时间权重，直道上加速且转弯时内道转弯  0～1000
+  weight_shortest_path: 40 # 0~100
+  weight_obstacle: 200 # 和障碍物最小距离权重 0～1000
+  weight_inflation: 0.8 # 0~10
+  weight_dynamic_obstacle: 30 # 0~1000
+  weight_dynamic_obstacle_inflation: 0.1 # 0~10
+  weight_viapoint: 10
+
+  # Homotopy Class Planner
+  enable_homotopy_class_planning: False
+  enable_multithreading: True
+  simple_exploration: False
+  max_number_classes: 4
+  roadmap_graph_no_samples: 15
+  roadmap_graph_area_width: 5
+  h_signature_prescaler: 0.5
+  h_signature_threshold: 0.1
+  obstacle_keypoint_offset: 0.1
+  obstacle_heading_threshold: 0.45
+  visualize_hc_graph: False

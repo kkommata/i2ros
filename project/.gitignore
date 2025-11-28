@@ -1,0 +1,12 @@
+build/
+devel/
+logs/
+.catkin_tools/
+*.log
+*.pyc
+__pycache__/
+venv_redlight/
+*.pth
+*.so
+*.egg-info/
+.catkin_tools/*

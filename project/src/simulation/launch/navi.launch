@@ -1,0 +1,95 @@
+<launch>
+      <node pkg="simulation" type="JSON_param_reader" name="JSON_param_reader" output="screen"/>
+      <node pkg="simulation" type="unity_TCP_stream_receiver" name="Unity_ROS_message_Rx" output="screen"/>
+      <node pkg="simulation" type="ROS_command_transmitter" name="ROS_Unity_command_Tx" output="screen"/>
+
+      <!-- tf2 transformation-->
+      <!-- world to map 
+       <node pkg="tf2_ros" type="static_transform_publisher" name="tf_world_map" args="0 0 0 0 0 0 world map" /> -->
+
+      <!-- OurCar/INS to OurCar/Center -->
+      <node pkg="tf2_ros" type="static_transform_publisher" name="tf_nominal_center" args="0 0 -0.7180116 0 0 0 OurCar/INS OurCar/Center" />
+
+      <!-- OurCar/Center to base_link 
+      <node pkg="tf2_ros" type="static_transform_publisher" name="tf_Center_base_link" args="0 0 0 0 0 0 OurCar/Center base_link" /> -->
+
+      <!-- OurCar/Center to Sensors Base -->
+      <node pkg="tf2_ros" type="static_transform_publisher" name="tf_sensors" args="0.8199998 0 1.269 0 0 0 OurCar/Center OurCar/Sensors/SensorBase" />
+      <!-- Sensors Base to Cameras -->
+      <node pkg="tf2_ros" type="static_transform_publisher" name="tf_segmentation_camera" args="0 0 0 0.5 -0.5 0.5 -0.5 OurCar/Sensors/SensorBase OurCar/Sensors/SegCamera" />
+      <node pkg="tf2_ros" type="static_transform_publisher" name="tf_depth_camera" args="0 0 0 0.5 -0.5 0.5 -0.5 OurCar/Sensors/SensorBase OurCar/Sensors/DepthCamera" />
+      <node pkg="tf2_ros" type="static_transform_publisher" name="tf_RGB_camera_left" args="0 0.2 0 0.5 -0.5 0.5 -0.5 OurCar/Sensors/SensorBase OurCar/Sensors/RGBCameraLeft" />
+      <node pkg="tf2_ros" type="static_transform_publisher" name="tf_RGB_camera_right" args="0 -0.2 0 0.5 -0.5 0.5 -0.5 OurCar/Sensors/SensorBase OurCar/Sensors/RGBCameraRight" />
+
+
+      <!-- generate point clouds-->
+      <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" />
+      <node pkg="nodelet" type="nodelet" name="depth_image_processing" args="load depth_image_proc/point_cloud_xyz nodelet_manager">
+            <remap from="camera_info" to="/Unity_ROS_message_Rx/OurCar/Sensors/DepthCamera/camera_info"/>
+            <remap from="image_rect" to="/Unity_ROS_message_Rx/OurCar/Sensors/DepthCamera/image_raw"/>
+            <remap from="points" to="/perception/pcl/points"/>
+      </node>
+
+      <!--generate octomap-->
+      <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" output="screen">
+            <rosparam file="$(find navigation_config)/config/octomap_params.yaml" command="load"/>
+            <remap from="cloud_in" to="/perception/pcl/points"/>
+      </node>
+
+      <!--generate costmap-->
+      <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"> -->
+      <!-- <param name="recovery_behavior_enabled" value="false" /> -->
+      <!-- <rosparam file="$(find navigation_config)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/> -->
+      <!-- <rosparam file="$(find navigation_config)/config/global_costmap_params.yaml" command="load" /> -->
+      <!-- <rosparam file="$(find navigation_config)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/> -->
+      <!-- <rosparam file="$(find navigation_config)/config/local_costmap_params.yaml" command="load" /> -->
+      <!-- <rosparam file="$(find navigation_config)/config/base_global_planner_params.yaml" command="load"/> -->
+      <!-- <rosparam file="$(find navigation_config)/config/base_local_planner_params.yaml" command="load"/> -->
+      <!-- <rosparam file="$(find navigation_config)/config/teb_local_planner_params.yaml" command="load"/> -->
+      <!-- </node> -->
+
+
+      <!-- 导航路径规划公共参数 -->
+      <rosparam file="$(find navigation_config)/params_nav_common/move_base_params.yaml" command="load" ns="move_base"/>
+      <rosparam file="$(find navigation_config)/params_nav_common/base_global_planner_param.yaml" command="load" ns="move_base"/>
+
+      <!-- 导航TEB局部路径规划器参数 -->
+      <param name="move_base/base_local_planner" type="string" value="teb_local_planner/TebLocalPlannerROS"/>
+      <rosparam file="$(find navigation_config)/params_nav_common/teb_local_planner_params.yaml" command="load" ns="move_base"/>
+
+      <!-- eband_local_planner_params.yaml -->
+      <!-- <param name="move_base/base_local_planner" type="string" value="eband_local_planner/EBandPlannerROS"/> -->
+      <!-- <rosparam file="$(find navigation_config)/params_nav_common/eband_local_planner_params.yaml" command="load" ns="move_base"/> -->
+
+      <!-- 导航代价地图公共参数 -->
+      <rosparam file="$(find navigation_config)/params_costmap_common/costmap_common_params.yaml" command="load" ns="move_base/global_costmap"/>
+      <rosparam file="$(find navigation_config)/params_costmap_common/costmap_common_params.yaml" command="load" ns="move_base/local_costmap"/>
+      <rosparam file="$(find navigation_config)/params_costmap_common/local_costmap_params.yaml" command="load" ns="move_base"/>
+      <rosparam file="$(find navigation_config)/params_costmap_common/global_costmap_params.yaml" command="load" ns="move_base"/>
+
+      <!-- 启动导航节点 -->
+      <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+            <!-- 导航代价地图与路径规划器对应车型参数 -->
+            <rosparam file="$(find navigation_config)/params_costmap_car/param_mini_akm/costmap_car_params.yaml" command="load" ns="global_costmap" />
+            <rosparam file="$(find navigation_config)/params_costmap_car/param_mini_akm/costmap_car_params.yaml" command="load" ns="local_costmap" />
+      </node>
+
+      <!-- Checkpoint handler node -->
+      <node pkg="checkpoint_handler" type="checkpoint_handler_node.py" name="checkpoint_handler_node" output="screen"/>
+
+      <!-- controll node -->
+      <!-- <node pkg="controller" type="controller_node" name="controller_node" output="screen">
+            <rosparam command="load" file="$(find controller)/config/control_params.yaml"/>
+      </node> -->
+
+      <node pkg="controller" type="controller_node" name="controller_node" output="screen" />
+
+      <!-- dummy_controller_node -->
+      <!-- <node pkg="dummy_controller" type="dummy_controller_node" name="dummy_controller_node" output="screen" /> -->
+
+      <!-- launch the visualization -->
+      <node pkg="rviz" type="rviz" name="rviz" args="-d $(find simulation)/rviz/visualization.rviz" />
+      <node pkg="simulation" type="run_unity.sh" name="unity_sim" output="screen" />
+
+
+</launch>

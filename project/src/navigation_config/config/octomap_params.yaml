@@ -1,0 +1,35 @@
+resolution: 0.3
+frame_id: odom
+base_frame_id: OurCar/Sensors/DepthCamera
+
+height_map: true
+project_2d_map: true
+#color_octree: false
+#colored_voxels: false
+
+latch: false
+filter_ground: false
+#ground_filter/distance: 0.1
+#ground_filter/angle: 0.15
+#ground_filter/plane_distance: 0.05
+insert_miss_rays: true
+publish_free_space: true
+max_range: 30.0
+pointcloud_min_z: -2
+pointcloud_max_z: 2
+filter_speckles: true
+occupancy_max_z: 0
+occupancy_min_z: -0.71
+
+publish_period: 0.2
+update_octree: true
+#sensor_model/max_range : 25.0
+
+tree_type: OcTreeStamped # 用时间戳树支持过时清除
+max_update_age: 1.0 # 超过1秒没更新的体素会被移除（单位秒）
+
+sensor_model:
+  hit: 0.7
+  miss: 0.45 # miss加大一点，加快清除速度
+  min: 0.1
+  max: 0.97
