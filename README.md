@@ -2,7 +2,7 @@
 
 ## 0  Description
 
-This project primarily aims to achieve autonomous driving. A pre-set map contains numerous key points, and the vehicle must navigate according to the numbered sequence of these key points. During its journey, it must correctly identify traffic lights and stop at red lights. In addition, it must be able to identify and avoid other moving vehicles and obstacles.![image-20251210080036745](C:\Users\Levi\AppData\Roaming\Typora\typora-user-images\image-20251210080036745.png)
+This project primarily aims to achieve autonomous driving. A pre-set map contains numerous key points, and the vehicle must navigate according to the numbered sequence of these key points. During its journey, it must correctly identify traffic lights and stop at red lights. In addition, it must be able to identify and avoid other moving vehicles and obstacles.![map info](./map info.png)
 
 ---
 
@@ -118,6 +118,6 @@ At startup the launch file **publishes a brief forward command** so that the pla
 
 ## 6  Vehicle parameters
 
-![image-20251210080156006](C:\Users\Levi\AppData\Roaming\Typora\typora-user-images\image-20251210080156006.png)
+![vehicle parameter_main](./vehicle parameter_main.png)
 
-![image-20251210080212244](C:\Users\Levi\AppData\Roaming\Typora\typora-user-images\image-20251210080212244.png)
+![vehicle parameter_right](./vehicle parameter_right.png)
