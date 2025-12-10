@@ -2,7 +2,7 @@
 
 ## 0  Description
 
-This project primarily aims to achieve autonomous driving. A pre-set map contains numerous key points, and the vehicle must navigate according to the numbered sequence of these key points. During its journey, it must correctly identify traffic lights and stop at red lights. In addition, it must be able to identify and avoid other moving vehicles and obstacles.![map info](./map info.png)
+This project primarily aims to achieve autonomous driving. A pre-set map contains numerous key points, and the vehicle must navigate according to the numbered sequence of these key points. During its journey, it must correctly identify traffic lights and stop at red lights. In addition, it must be able to identify and avoid other moving vehicles and obstacles.![map_info](./map_info.png)
 
 ---
 
@@ -118,6 +118,6 @@ At startup the launch file **publishes a brief forward command** so that the pla
 
 ## 6  Vehicle parameters
 
-![vehicle parameter_main](./vehicle parameter_main.png)
+![vehicle_parameter_main](./vehicle_parameter_main.png)
 
-![vehicle parameter_right](./vehicle parameter_right.png)
+![vehicle_parameter_right](./vehicle_parameter_right.png)
