@@ -1,8 +1,8 @@
-# Introduction to ROS – Course Project **Autonomous Driving** – Team 9
+# ROS –Project **Autonomous Driving**
 
-> Technical University of Munich • *Introduction to ROS* (Prof. Dr. Markus Ryll)
+## 0  Description
 
-**Team members**   Zetong Zhang · Shixuan Fang · Zhiheng Quan · Jiayu Zhao · Sizhe Fan
+This project primarily aims to achieve autonomous driving. A pre-set map contains numerous key points, and the vehicle must navigate according to the numbered sequence of these key points. During its journey, it must correctly identify traffic lights and stop at red lights. In addition, it must be able to identify and avoid other moving vehicles and obstacles.![image-20251210080036745](C:\Users\Levi\AppData\Roaming\Typora\typora-user-images\image-20251210080036745.png)
 
 ---
 
@@ -10,8 +10,6 @@
 
 - **Ubuntu 20.04 LTS** (recommended)
 - **ROS Noetic** — follow the official guide[1]
-- clone the reposit from the link: git@gitlab.lrz.de:00000000014BE3CD/i2ros_team9.git
-- A working **catkin workspace** (we assume `~/I2ROS_team9/project`)
 
 
 [1] [https://wiki.ros.org/noetic/Installation/Ubuntu](https://wiki.ros.org/noetic/Installation/Ubuntu)
@@ -71,7 +69,6 @@ roslaunch octomap_server octomap_mapping.launch
 All Python packages required by the perception stack are frozen in `project/requirements.txt`. Install them in one shot:
 
 ```bash
-cd ~/i2ros_team9/project   # project root (adjust path if different)
 pip install --user -r requirements.txt     # installs into the user‑site packages
 ```
 
@@ -91,14 +88,13 @@ pip install --user -r requirements.txt     # installs into the user‑site packa
 At first you should build your work space:
 
 ```bash
-cd ~/I2ROS_team9/project
 catkin build                 # or `catkin_make`
 ```
 
 Every new terminal that runs ROS nodes must source the overlay:
 
 ```bash
-source ~/I2ROS_team9/project/devel/setup.bash
+source ~/project/devel/setup.bash
 ```
 
 Then run the launch file.
@@ -120,4 +116,8 @@ roslaunch simulation trial.launch
 
 At startup the launch file **publishes a brief forward command** so that the planning frame (`OurCar/Center`) enters the cost‑map. Occasionally this automatic push fails; if the car remains idle, simply drive it forward in Unity by roughly one metre. Once the axle is inside the cost‑map, `move_base` will immediately take over.
 
+## 6  Vehicle parameters
 
+![image-20251210080156006](C:\Users\Levi\AppData\Roaming\Typora\typora-user-images\image-20251210080156006.png)
+
+![image-20251210080212244](C:\Users\Levi\AppData\Roaming\Typora\typora-user-images\image-20251210080212244.png)
